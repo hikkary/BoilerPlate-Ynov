@@ -30,7 +30,7 @@ export default class Options extends React.Component {
       .then(result => this.setState({ characters: result.data }))
   }
 
-  _keyExtractor = item => item.name
+  keyExtractor = item => item.name
 
   render() {
     const { characters } = this.state
@@ -39,6 +39,7 @@ export default class Options extends React.Component {
         {characters ? (
           <StyledFlatList
             data={characters}
+            keyExtractor={this.keyExtractor}
             renderItem={({ item }) => <CharacterRow character={item} />}
           />
         ) : (
