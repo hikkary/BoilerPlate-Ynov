@@ -1,6 +1,16 @@
-import React from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { Text } from 'react-native'
 import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+
+const StyledTouchableOpacity = styled.TouchableOpacity`
+  background-color: #bae1ff;
+  box-shadow: 1px 1px 10px #00000055;
+  align-items: center;
+  margin: 0px 5px;
+  min-width: 50px;
+  padding: 5px;
+`
 
 export default class CounterButton extends React.Component {
   static propTypes = {
@@ -10,9 +20,9 @@ export default class CounterButton extends React.Component {
   render() {
     const { label, onPressFunction } = this.props
     return (
-      <TouchableOpacity onPress={onPressFunction}>
+      <StyledTouchableOpacity onPress={onPressFunction}>
         <Text>{label}</Text>
-      </TouchableOpacity>
+      </StyledTouchableOpacity>
     )
   }
 }
