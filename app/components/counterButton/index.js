@@ -4,9 +4,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledTouchableOpacity = styled.TouchableOpacity`
+  align-items: center;
   background-color: #bae1ff;
   box-shadow: 1px 1px 10px #00000055;
-  align-items: center;
   margin: 0px 5px;
   min-width: 50px;
   padding: 5px;
