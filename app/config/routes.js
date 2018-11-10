@@ -1,6 +1,7 @@
 import { StackNavigator } from 'react-navigation'
 
 import Characters from '../screens/characters'
+import CharactersDetail from '../screens/characterDetail'
 import Home from '../screens/home'
 import Options from '../screens/options'
 import Themes from '../screens/themes'
@@ -21,6 +22,12 @@ const HomeStack = StackNavigator({
     screen: Characters,
     navigationOptions: {
       headerTitle: 'Characters'
+    }
+  },
+  CharacterDetail: {
+    screen: CharactersDetail,
+    navigationOptions: {
+      headerTitle: 'Character Card'
     }
   },
   Options: {

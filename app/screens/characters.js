@@ -33,6 +33,7 @@ export default class Options extends React.Component {
   keyExtractor = item => item.name
 
   render() {
+    const { navigation } = this.props
     const { characters } = this.state
     return (
       <BackgroundView>
@@ -40,7 +41,9 @@ export default class Options extends React.Component {
           <StyledFlatList
             data={characters}
             keyExtractor={this.keyExtractor}
-            renderItem={({ item }) => <CharacterRow character={item} />}
+            renderItem={({ item }) => (
+              <CharacterRow character={item} navigation={navigation} />
+            )}
           />
         ) : (
           <Text>No data available</Text>
