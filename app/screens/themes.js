@@ -1,23 +1,22 @@
+import { Text } from 'react-native'
 import React, { Component } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import styled from 'styled-components'
+
+const ThemesContainer = styled.View`
+    align-Items: 'center',
+    background-color: '#F5FCFF'
+    flex: 1,
+    justify-content: 'center',
+`
 
 export default class Themes extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ThemesContainer>
         <Text>Couleur One</Text>
         <Text>Couleur Two</Text>
         <Text>Couleur Three</Text>
-      </View>
+      </ThemesContainer>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  }
-})
