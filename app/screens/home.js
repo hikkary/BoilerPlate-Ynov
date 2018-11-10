@@ -1,20 +1,16 @@
-import { Button, StyleSheet, View } from 'react-native'
+import { Button } from 'react-native'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import Counter from '../components/counter'
-import CounterButton from '../components/counterButton'
+import CounterCommands from '../components/counterCommands'
 
-const BackgroundView = styled.View`
+const HomeContainer = styled.View`
+  align-items: center;
   background-color: #baffc9;
   flex: 1;
   justify-content: center;
-  align-items: center;
-`
-
-const ButtonContainer = styled.View`
-  flex-direction: row;
 `
 
 export default class App extends Component {
@@ -31,11 +27,7 @@ export default class App extends Component {
   }
 
   // handle navigation
-  handleCharactersButtonPress = () => {
-    this.props.navigation.navigate('Characters')
-  }
-
-  handleParameterButtonPress = () => {
+  handleOptionsButtonPress = () => {
     this.props.navigation.navigate('Options')
   }
 
@@ -45,20 +37,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <BackgroundView>
+      <HomeContainer>
         <Counter counterNb={this.state.counterNb} />
-        <ButtonContainer>
-          <CounterButton label="-" onPressFunction={this.decrementCounter} />
-          <CounterButton label="+" onPressFunction={this.incrementCounter} />
-        </ButtonContainer>
-        <ButtonContainer>
-          <Button title="Options" onPress={this.handleParameterButtonPress} />
-          <Button
-            title="Characters"
-            onPress={this.handleCharactersButtonPress}
-          />
-        </ButtonContainer>
-      </BackgroundView>
+        <CounterCommands
+          incrementCounter={this.incrementCounter}
+          decrementCounter={this.decrementCounter}
+        />
+        <Button title="Options" onPress={this.handleOptionsButtonPress} />
+      </HomeContainer>
     )
   }
 }
