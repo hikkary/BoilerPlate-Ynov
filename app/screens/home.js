@@ -1,14 +1,28 @@
-import { Button } from 'react-native'
+import { Image } from 'react-native'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+import ParameterImage from '../static/images/parameter.png'
+
 const BackgroundView = styled.View`
-  background-color: #baffc9;
+  flex: 1;
+`
+const ContentContainer = styled.View`
+  background-color: ${props => props.theme.color.primary};
+  flex: 5;
+  justify-content: center;
+  align-items: center;
+`
+
+const ParameterContainer = styled.View`
+  background-color: ${props => props.theme.color.secondary};
   flex: 1;
   justify-content: center;
   align-items: center;
 `
+
+const ParameterTouchableOpacity = styled.TouchableOpacity``
 
 export default class App extends Component {
   static propTypes = {
@@ -39,7 +53,12 @@ export default class App extends Component {
   render() {
     return (
       <BackgroundView>
-        <Button title="Options" onPress={this.handleParameterButtonPress} />
+        <ContentContainer />
+        <ParameterContainer>
+          <ParameterTouchableOpacity onPress={this.handleParameterButtonPress}>
+            <Image source={ParameterImage} />
+          </ParameterTouchableOpacity>
+        </ParameterContainer>
       </BackgroundView>
     )
   }
