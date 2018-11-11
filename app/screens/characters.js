@@ -12,9 +12,7 @@ const BackgroundView = styled.View`
   background-color: #f5fcff;
 `
 
-const StyledFlatList = styled.FlatList`
-  margin-top: 20px;
-`
+const StyledFlatList = styled.FlatList``
 
 export default class Options extends React.Component {
   static propTypes = {
@@ -35,6 +33,7 @@ export default class Options extends React.Component {
   render() {
     const { navigation } = this.props
     const { characters } = this.state
+    console.log(this.state.characters)
     return (
       <BackgroundView>
         {characters ? (
