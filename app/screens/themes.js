@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const ThemesContainer = styled.View`
-    align-Items: 'center',
-    background-color: '#F5FCFF'
-    flex: 1,
-    justify-content: 'center',
+  align-items: center;
+  background-color: #f5fcff;
+  flex: 1;
+  justify-content: center;
 `
 
 export default class Themes extends Component {
