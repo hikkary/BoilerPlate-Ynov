@@ -3,28 +3,23 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import Avatar from '../components/avatar'
+
 const BackgroundView = styled.View`
   background-color: #f5fcff;
   flex: 1;
   justify-content: center;
 `
-
-const Header = styled.View`
-  background-color: #ff7b7b;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`
-
 const Content = styled.View`
   background-color: #ffbaba;
   flex: 3;
 `
-const Avatar = styled.Image`
-  height: 120px;
-  width: 120px;
-  border-radius: 60px;
-  background-color: yellow;
+
+const Header = styled.View`
+  align-items: center;
+  background-color: #ff7b7b;
+  flex: 1;
+  justify-content: center;
 `
 
 export default class Options extends React.Component {
@@ -44,9 +39,6 @@ export default class Options extends React.Component {
   }
 
   render() {
-    console.log(this.props)
-    console.log(this.state)
-    console.log(this.props.navigation.getParam('characterData'))
     const { characterData } = this.state
     return (
       <BackgroundView>
