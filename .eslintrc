@@ -2,6 +2,12 @@
   "parser": "babel-eslint",
   "plugins": ["react"],
   "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "globals": {
+    "setTimeout": true,
+    "setInterval": true,
+    "clearTimeout": true,
+    "clearInterval": true
+  },
   "rules": {
     "no-unused-vars": 2,
     "no-trailing-spaces": 2,
