@@ -28,6 +28,10 @@ export default class App extends Component {
     this.props.navigation.navigate('Options')
   }
 
+  handleMagicHatPress = () => {
+    this.props.navigation.navigate('MagicHat')
+  }
+
   render() {
     return (
       <BackgroundView>
@@ -37,6 +41,7 @@ export default class App extends Component {
             title="Characters"
             onPress={this.handleCharactersButtonPress}
           />
+          <Button title="Choixpeau" onPress={this.handleMagicHatPress} />
         </ButtonContainer>
       </BackgroundView>
     )
