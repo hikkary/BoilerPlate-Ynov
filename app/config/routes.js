@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation'
 import Characters from '../screens/characters'
 import CharactersDetail from '../screens/characterDetail'
 import Home from '../screens/home'
+import MagicHat from '../screens/magicHat'
 import Options from '../screens/options'
 import Themes from '../screens/themes'
 
@@ -34,6 +35,12 @@ const HomeStack = StackNavigator({
     screen: Options,
     navigationOptions: {
       headerTitle: 'Options'
+    }
+  },
+  MagicHat: {
+    screen: MagicHat,
+    navigationOptions: {
+      headerTitle: 'MagicHat'
     }
   },
   Themes: {
