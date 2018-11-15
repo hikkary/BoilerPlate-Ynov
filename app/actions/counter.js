@@ -7,7 +7,7 @@ export const increaseCounter = () => ({
 })
 
 export const decreaseCounter = () => ({
-  type: INCREASE_COUNTER
+  type: DECREASE_COUNTER
 })
 
 export const resetCounter = () => ({
