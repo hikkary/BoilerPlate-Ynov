@@ -1,5 +1,6 @@
 import { StackNavigator } from 'react-navigation'
 
+import Counter from '../screens/counter'
 import Home from '../screens/home'
 import Options from '../screens/options'
 import Themes from '../screens/themes'
@@ -14,6 +15,12 @@ const HomeStack = StackNavigator({
     screen: Home,
     navigationOptions: {
       header: () => null
+    }
+  },
+  Counter: {
+    screen: Counter,
+    navigationOptions: {
+      headerTitle: 'Options'
     }
   },
   Options: {

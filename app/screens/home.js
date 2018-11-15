@@ -1,4 +1,6 @@
-import { Image } from 'react-native'
+import { connect } from 'react-redux'
+import { bindActionsCreator } from 'redux'
+import { Image, Text } from 'react-native'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import styled from 'styled-components'
@@ -24,36 +26,28 @@ const ParameterContainer = styled.View`
 
 const ParameterTouchableOpacity = styled.TouchableOpacity``
 
-export default class App extends Component {
+class Home extends Component {
   static propTypes = {
     navigation: PropTypes.object
   }
-
-  state = {
-    counterNb: 0
-  }
-
-  decrementCounter = () => {
-    this.setState({ counterNb: this.state.counterNb - 1 })
-  }
-
   // handle navigation
-  handleCharactersButtonPress = () => {
-    this.props.navigation.navigate('Characters')
+  handleCounterButtonPress = () => {
+    this.props.navigation.navigate('Counter')
   }
 
   handleParameterButtonPress = () => {
     this.props.navigation.navigate('Options')
   }
 
-  incrementCounter = () => {
-    this.setState({ counterNb: this.state.counterNb + 1 })
-  }
-
   render() {
     return (
       <BackgroundView>
-        <ContentContainer />
+        <ContentContainer>
+          <Text>{this.props.counter}</Text>
+          <ParameterTouchableOpacity onPress={this.handleCounterButtonPress}>
+            <Text>Counter</Text>
+          </ParameterTouchableOpacity>
+        </ContentContainer>
         <ParameterContainer>
           <ParameterTouchableOpacity onPress={this.handleParameterButtonPress}>
             <Image source={ParameterImage} />
@@ -63,3 +57,11 @@ export default class App extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    counter: state.counter.counter
+  }
+}
+
+export default connect(mapStateToProps)(Home)
