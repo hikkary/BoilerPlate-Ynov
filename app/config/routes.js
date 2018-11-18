@@ -1,6 +1,8 @@
-import { StackNavigator } from 'react-navigation'
+import { createSwitchNavigator, createStackNavigator } from 'react-navigation'
 
+import AuthLoading from '../screens/authLoading'
 import Home from '../screens/home'
+import Login from '../screens/login'
 import Options from '../screens/options'
 import Themes from '../screens/themes'
 
@@ -9,7 +11,7 @@ const optionsGeneral = {
   headerMode: 'none'
 }
 
-const HomeStack = StackNavigator({
+const LoggedUser = createStackNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
@@ -30,10 +32,23 @@ const HomeStack = StackNavigator({
   }
 })
 
-export default StackNavigator(
+const DisconnectedUser = createStackNavigator({
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      header: () => null
+    }
+  }
+})
+
+export default createSwitchNavigator(
   {
+    AuthLoading: { screen: AuthLoading },
+    Auth: {
+      screen: DisconnectedUser
+    },
     Home: {
-      screen: HomeStack
+      screen: LoggedUser
     }
   },
   optionsGeneral
