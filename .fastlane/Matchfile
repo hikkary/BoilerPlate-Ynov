@@ -1,0 +1,6 @@
+git_url("https://github.com/hikkary/sportTimerProCertificate")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier(["com.hikkary.sport-timer-po"])
+username("hikkary@hotmail.fr")
