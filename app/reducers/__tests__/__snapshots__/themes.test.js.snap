@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`set themes on blue Snapshot 1`] = `
+Object {
+  "currentTheme": Object {
+    "color": Object {
+      "primary": "#7ba9cc",
+      "secondary": "#6C94B2",
+    },
+  },
+}
+`;
+
+exports[`set themes on green Snapshot 1`] = `
+Object {
+  "currentTheme": Object {
+    "color": Object {
+      "primary": "#95D4AB",
+      "secondary": "#44875B",
+    },
+  },
+}
+`;
+
+exports[`set themes on red Snapshot  1`] = `
+Object {
+  "currentTheme": Object {
+    "color": Object {
+      "primary": "#D49795",
+      "secondary": "#875352",
+    },
+  },
+}
+`;
+
+exports[`sets initial state Snapshot 1`] = `
+Object {
+  "currentTheme": Object {
+    "color": Object {
+      "primary": "#7ba9cc",
+      "secondary": "#6C94B2",
+    },
+  },
+}
+`;
