@@ -2,6 +2,9 @@
   "parser": "babel-eslint",
   "plugins": ["react"],
   "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "env": {
+    "jest": true
+  },
   "rules": {
     "no-unused-vars": 2,
     "no-trailing-spaces": 2,

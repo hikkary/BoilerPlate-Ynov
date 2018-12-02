@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
 const AvatarContainer = styled.View`
   background-color: red;
@@ -7,7 +7,7 @@ const AvatarContainer = styled.View`
   width: 40px;
 `
 
-export default class Avatar extends React.Component() {
+export default class Avatar extends React.Component {
   render() {
     return <AvatarContainer />
   }
